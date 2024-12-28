@@ -8,6 +8,18 @@
   - Most/all resources are on the client.
   - The cliend Chagne the brouwsers address and present the new content
 
+
+* ** Routers > Pros and cons of SPA (Single Page Applications)
+- Pros: (Fast and smooth UX)
+You notice that doing so involves writing more code, especially for routing and presenting views with multi-page applications. 
+We never have to do this stuff. Plus, there is another issue with single page application, and that is search engine optimization or SEO.
+Search engine spiders by default cannot index a single page application because at the time a search  engine spider visits your website, the content is not loaded yet, so it cannot be indexed.
+I have read about some techniques that can resolve this issue, but they are not easy.
+
+- Cons:  (Complicated, and Lack of Index-ablility * SEO *)
+on the flip side, single page applications provide a fast and a smooth user experience to the user.
+
+
 */
 
 // Each page create a backbond view to show each page on single page application
