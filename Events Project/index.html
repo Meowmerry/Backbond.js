@@ -18,22 +18,15 @@
         <script src="js/lib/jquery-min.js"></script>
         <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/backbone-min.js"></script>
+        <script id="newVehicleTemplate" type="text/template">
+            <input class="registration-number" type="text"></input> 
+            <button class="add">Add</button>
+        </script>
         <script id="vehicleTemplate" type="text/template">
              <%= registrationNumber %>
              <button class="delete">Delete</button>
         </script>
-        <script id="songTemplate" type="text/html" >
-            <%= title %>
-            <button >Listen</button>
-            <% if (plays > 1000) { %> 
-                <span class="popular">Popular</button>
-            <% } %>
-        </script>
-        <!-- <script src="js/main1.js"></script> -->
-        <!-- <script src="js/handleDOMEvents.js"></script> -->
-        <!-- <script src="js/handleModelEvents.js"></script> -->
-        <!-- <script src="js/handleCollectionEvents.js"></script> -->
         <!-- <script src="js/main.js"></script> -->
-        <script src="js/templating.js"></script>
+        <script src="js/event.js"></script>
     </body>
 </html>

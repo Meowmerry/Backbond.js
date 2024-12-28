@@ -1,0 +1,6 @@
+/*
+## Views > Handle Collection Events
+
+
+
+*/

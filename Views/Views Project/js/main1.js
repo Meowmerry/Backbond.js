@@ -7,19 +7,41 @@ const SongCollection = Backbone.Collection.extend({ // Song collection
 const SongView = Backbone.View.extend({ // Song view
   tagName: 'li',
   className: 'song-list',
-  id: 'song-list-id',
   attributes: {
     'data-genre': 'Jazz'
   },
+
   render: function () {
     // this.$el.html("Hello World");
-    this.$el.html(this.model.get('title'));
+    this.$el.html(this.model.get('title')); // Render only the title
+    this.$el.attr('id', this.model.id); // Set the id attribute of the <li> element to the id of the song model
     return this;
   },
 })
 
 // Create a list of songs and pass it to the view
 const SongsView = Backbone.View.extend({
+  // using in the render method
+  initialize: function () {
+    this.model.on("add", this.onSongAdded, this);
+    this.model.on("remove", this.removeSong, this);
+  },
+
+  onSongAdded: function (song) {
+    // console.log('Song added');
+    const songView = new SongView({ model: song }); // Create a new song view and pass the song model to it
+    // this.$el.append(songView.render().$el);
+    this.$('ul').append(songView.render().$el); // Append the rendered
+  },
+
+  removeSong: function (song) {
+    // console.log('Song removed');
+    this.$el.find('li#' + song.id).remove(); // using find method to find the <li> element with the id of the song model and remove it
+    // Or this.$('li#' + song.id).remove();
+    this.$('li#' + song.id).remove();
+
+  },
+
   render: function () {
     const ul = $('<ul></ul>');
     this.model.each(function (song) {
@@ -37,9 +59,9 @@ const SongsView = Backbone.View.extend({
 
 // const song = new Song({ title: 'Blue in Green' });
 const songCollection = new SongCollection([
-  new Song({ title: 'Blue in Green' }),
-  new Song({ title: 'So What' }),
-  new Song({ title: 'All Blues' }),
+  new Song({ title: 'Blue in Green', id: 1 }),
+  new Song({ title: 'So What', id: 2 }),
+  new Song({ title: 'All Blues', id: 3 }),
 ]);
 
 const songsView = new SongsView({ el: '#container', model: songCollection }); //-> Passing the song model to the view when creating the view
