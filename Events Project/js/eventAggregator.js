@@ -52,7 +52,7 @@ const MapView = Backbone.View.extend({
 
   initialize: function (options) {
     this.bus = options.bus;
-    this.bus.on("venueSelected", this.onVenueSelected, this); // Listen to the 'venueSelected' event
+    this.bus.on("venueSelected", this.onVenueSelected, this); // Listen to or Subscript to the 'venueSelected' event
 
   },
 
@@ -77,6 +77,8 @@ const venues = new Venues([
   new Venue({ name: '30 Mill Espresso' }),
   new Venue({ name: 'Platform Espresso' }),
   new Venue({ name: 'Mr Foxx' }),
+  new Venue({ name: 'Meow' }),
+  new Venue({ name: 'Todd' }),
 ])
 
 // Create VenuesView and render it
