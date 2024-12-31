@@ -17,11 +17,30 @@
         <script src="js/lib/jquery-min.js"></script>
         <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/backbone-min.js"></script>
+        <script src="js/lib/mustache.js"></script>
+
+        
         <script type="text/javascript" src="js/models/todoItem.js"></script>
         <script type="text/javascript" src="js/collections/todoCollection.js"></script>
         <script type="text/javascript" src="js/views/todoItemView.js"></script>
         <script type="text/javascript" src="js/views/todoItemsView.js"></script>
         <script type="text/javascript" src="js/views/addTodoItems.js"></script>
         <script src="js/main.js"></script>
+
+        <script type="text/html" id="todoItemTemplate">
+            <label>
+                <input type="checkbox" {{#completed}}checked{{/completed}} id="toggle"></input>
+            {{title}}
+            </label>
+            <button id="delete">Delete</button>
+        </script>
+
+        <script type="text/html" id="todoItemsTemplate">
+            <header id="addNewTodoItem">
+                <input type="text" autofocus id="newTodoItem" placeholder="What's the next task?"></input>
+            </header>
+            <ul id="todoItems"></ul>
+        </script>
+        
     </body>
 </html>

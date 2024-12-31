@@ -5,13 +5,13 @@ var TodoItem = Backbone.Model.extend({
 	},
 
 	url: "fakeUrl",
-	
-	validate: function(attrs){
+
+	validate: function (attrs) {
 		if (!attrs.description)
 			return "Description is required.";
 	},
 
-	toggle: function(){
+	toggle: function () {
 		this.set("isCompleted", !this.get("isCompleted"));
 	}
 });

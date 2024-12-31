@@ -6,13 +6,22 @@
 $(document).ready(function () {
 
 	// Initialize the collection ---> as an empty array 	const todoItems = new TodoItems([])
-	const todoItems = new TodoItems([// TodoItems from collections
-		new TodoItem({ description: "TodoItem 1" }),
-		new TodoItem({ description: "TodoItem 2" }),
-		new TodoItem({ description: "TodoItem 3" })
-	])
+	// const todoItems = new TodoItems([// TodoItems from collections
+	// 	new TodoItem({ description: "TodoItem 1", id: 1 }),
+	// 	new TodoItem({ description: "TodoItem 2", id: 2 }),
+	// 	new TodoItem({ description: "TodoItem 3", id: 3 })
+	// ])
 
+	// Get todolist from API https://jsonplaceholder.typicode.com/todos
+	// Initialize the todoItems  
+	const todoItems = new TodoItems([])
+	// todoItems.fetch({
+	// 	success: function () {
 
+	// 	}
+	// })
+
+	todoItems.fetch();
 
 	// Initialize the views
 	const todoItemsView = new TodoItemsView({ model: todoItems });
